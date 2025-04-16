@@ -1,0 +1,9 @@
+{% extends 'main.html'%}
+{% block content %}
+{% if request.user.is_authenticated %}
+<button><a href="{% url 'logout'%}">logout</a></button>
+{% else %}
+<button><a href="{% url 'login'%}">login</a></button>
+{% endif %}
+<h1> hi  {{request.user.username}} welcome to our page  </h1>
+{% endblock content %}

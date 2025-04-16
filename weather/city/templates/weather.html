@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+{% block content %}
+<center><div style="background: linear-gradient(rgb(7, 169, 233),blueviolet); width: 400px; padding: 30px; font-size: 20px;">
+    <form action="">
+        <label for="">City name </label>
+        <input type="text" name="name" placeholder="Enter city name " style="font-size: 20px;  ">
+        <br>
+        <input type="submit" value="search" style="background-color:blue; margin-top: 20px; padding: 10px; font-size: 20px; color:white;" >
+    </form>
+    <div >
+{% if name %}
+<div style="text-align: center;">
+    <h1> weather for {{name}}</h1>
+</div>
+<div style="text-align: center;">
+    <h1><big>{{e}}</big></h1>
+<h1> {{temp}} ℃</h1>
+</div>
+<div style="margin-left: -300px;">
+    <span style="font-size:30px;"> 📉 {{min |floatformat:2}} ℃</span> 
+   
+</div>
+<div style="margin-left: 200px; margin-top: -40px;">
+    <span style="font-size:30px;"> 📈{{max|floatformat:2}} ℃</span>
+</div>
+
+{% endif %}
+    </div>
+</div></center>
+{% endblock content %}
